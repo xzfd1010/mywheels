@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>sticky</title>
+    <style>
+        .sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /*--------------------*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #topbar {
+            background: green;
+            height: 60px;
+            color: white;
+            text-align: center;
+            opacity: .5;
+        }
+
+        .topbar-placeholder {
+            height: 60px;
+        }
+
+        main {
+            background: #ddd;
+            height: 1800px;
+        }
+
+        .sticky {
+            position: fixed;
+            left: 0;
+            top: 60px;
+        }
+    </style>
+</head>
+<body>
+<!--position:fixed只能在简单场景使用-->
+<div class="topbar-placeholder"> <!--用于占位-->
+    <div id="topbar">
+        topbar
+    </div>
+</div>
+<main>
+    主要内容
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+    <p>段落4</p>
+    <p>段落5</p>
+    <p>段落6</p>
+    <p>段落7</p>
+    <p>段落8</p>
+    <p>段落9</p>
+    <p>段落10</p>
+    <button>sticky button</button>
+    <p>段落1111111</p>
+</main>
+
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/sticky/index.js"></script>
+</body>
+</html>
