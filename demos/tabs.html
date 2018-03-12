@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>tabs</title>
+    <style>
+        .tabs {
+        }
+
+        .tabs > ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabs>ol.tabs-bar{
+            display: flex;
+            border-bottom: 1px solid red;
+        }
+
+        .tabs > ol.tabs-bar > li {
+            padding: 4px 8px;
+            border: 1px solid transparent;
+            border-bottom: 0;
+        }
+
+        .tabs > ol.tabs-bar > li:hover {
+            border-color: red;
+        }
+
+        .tabs > ol.tabs-bar > li.active {
+            border-color: blue;
+        }
+
+        .tabs > ol.tabs-content > li {
+            display: none;
+        }
+
+        .tabs > ol.tabs-content > li.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tabs">
+    <ol class="tabs-bar">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <ol class="tabs-content">
+        <li>content 1</li>
+        <li>content 2</li>
+        <li>content 3</li>
+    </ol>
+</div>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/tabs/index.js"></script>
+<script>
+  var tabs = new Tabs('.tabs')
+</script>
+</body>
+</html>
