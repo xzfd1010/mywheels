@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>Title</title>
+    <style>
+        .dialog {
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dialog-wrapper {
+            background: #fff;
+            padding: 20px;
+            min-width: 200px;
+        }
+
+        .dialog-header {
+            border-bottom: 1px solid;
+        }
+
+        .dialog-main {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .dialog-footer {
+            text-align: right;
+        }
+
+        .dialog-footer button {
+            margin-left: 10px;
+        }
+
+        /*-------*/
+        .dialog {
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击</button>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/dialog/index.js"></script>
+<script>
+  // 考虑接口
+  var btn = document.querySelector('#btn')
+  btn.onclick = function () {
+    var dialog = new Dialog({
+      title: '标题',
+      content: '<b>欢迎</b>',
+      buttons: [
+        {
+          text: '确定',
+          className: 'userDialog',
+          action: function () {
+            console.log(1)
+            // 或者异步
+            setTimeout(() => {
+              dialog.close()
+            })
+          }
+        },
+        {
+          text: '取消',
+          action: function () {
+            // return true // 允许我帮你关闭
+            dialog.close()
+          }
+        }
+      ]
+    })
+    dialog.open() // dialog.close()
+  }
+</script>
+</body>
+</html>
